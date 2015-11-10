@@ -1,1 +1,3 @@
-My favorite candy is candy corn!
+My favorite candy is candy corn and nothing else!
+
+I have respect now because I have a big bike, yo.
