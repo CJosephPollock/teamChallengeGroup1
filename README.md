@@ -1,1 +1,1 @@
-My favorite candy is candy corn!
+My favorite candy is mars bars, especially the chocolate ones!
