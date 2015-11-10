@@ -1,1 +1,1 @@
-# teamChallengeGroup1
+My favorite candy is candy corn!
