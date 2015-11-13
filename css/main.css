@@ -8,14 +8,15 @@ body {
 }
 
 form {
-	width: 100%;
-	text-align: center;
+	width: 80%;
+	text-align: left;
+	margin: auto;
 }
 
 form input {
 	margin: 10px auto;
 	display: block;
-	width: 80%;
+	width: 100%;
 	max-width: 500px;
 }
 

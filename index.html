@@ -14,12 +14,26 @@
 	<h2>Our service is fun and awesome, but you must be 13 to join.</h2>
 
 <form>
+	<label for="email">Email:</label>
 	<input type="text" ng-model="email" name="email" placeholder="Email...">
+
+	<label for="firstName">First Name:</label>
 	<input type="text" ng-model="firstName" name="firstName" placeholder="First Name...">
+
+	<label for="lastName">Last Name:</label>
 	<input type="text" ng-model="lastName" name="lastName" placeholder="Last Name...">
+
+	<label for="birthday">Birthday:</label>
 	<input type="text" ng-model="birthday" name="birthday" placeholder="Birthday...">
-	<input type="text" ng-model="password" name="password" placeholder="Password...">
-	<input type="text" ng-model="confirmPassword" name="confirmPassword" placeholder="Confirm Password...">
+
+	<label for="password">Password:</label>
+	<input type="password" ng-model="password" name="password" placeholder="Password...">
+
+	<label for="confirmPassword">Confirm Password:</label>
+	<input type="password" ng-model="confirmPassword" name="confirmPassword" placeholder="Confirm Password...">
+
+	<button name="submit" ng-model="submitFormButton" ng-click="submitForm()">Submit</button>
+	<button name="reset" ng-model="resetFormButton" ng-click="resetForm()">Reset</button>
 </form>
 
 
