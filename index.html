@@ -5,7 +5,11 @@
 	<title>Our cool website</title>
 </head>
 
+<!-- bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+<!-- include libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="js/app.js"></script>
 
@@ -13,24 +17,37 @@
 	<h1>Sign Up</h1>
 	<h2>Our service is fun and awesome, but you must be 13 to join.</h2>
 
-<form>
-	<label for="email">Email:</label>
-	<input type="text" ng-model="email" name="email" placeholder="Email...">
+	<form name="userForm" ng-submit="submitForm()" action="..." onsubmit="return checkForm(this);">
 
-	<label for="firstName">First Name:</label>
-	<input type="text" ng-model="firstName" name="firstName" placeholder="First Name...">
+		<!--EMAIL ADDRESS VALIDATION-->
+		<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+			<label class="email">Email</label>
+			<input type="email" name="email" class="form-control" ng-model="user.email">
 
-	<label for="lastName">Last Name:</label>
-	<input type="text" ng-model="lastName" name="lastName" placeholder="Last Name...">
+			<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+		</div>
 
-	<label for="birthday">Birthday:</label>
-	<input type="text" ng-model="birthday" name="birthday" placeholder="Birthday...">
+		<label for="firstName">First Name:</label>
+		<input type="text" ng-model="firstName" name="firstName" placeholder="First Name...">
 
-	<label for="password">Password:</label>
-	<input type="password" ng-model="password" name="password" placeholder="Password...">
+		<label for="lastName">Last Name:</label>
+		<input type="text" ng-model="lastName" name="lastName" placeholder="Last Name...">
 
-	<label for="confirmPassword">Confirm Password:</label>
-	<input type="password" ng-model="confirmPassword" name="confirmPassword" placeholder="Confirm Password...">
+		<label for="birthday">Birthday:</label>
+		<input type="text" ng-model="birthday" name="birthday" placeholder="Birthday...">
+
+		<!--PASSWORD VALIDATION-->
+		<div class="form-group">
+			<label for="password">Password:</label>
+			<input type="password" name="password" class="form-control" ng-model="user.password" id="password" required>
+
+		</div>
+		<div class="form-group">
+			<label for="confirmPassword">Confirm Password:</label>
+			<input type="password" name="confirmPassword" class="form-control" ng-model="user.confirmPassword" id="confirmPassword" onkeyup="checkPass(); return false;" required>
+			<span id="confirmMessage" class="confirmMessage"></span>
+		</div>
+
 
 	<button name="submit" ng-model="submitFormButton" ng-click="submitForm()">Submit</button>
 	<button name="reset" ng-model="resetFormButton" ng-click="resetForm()">Reset</button>
