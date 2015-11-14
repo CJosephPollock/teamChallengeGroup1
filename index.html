@@ -17,7 +17,7 @@
 	<h1>Sign Up</h1>
 	<h2>Our service is fun and awesome, but you must be 13 to join.</h2>
 
-	<form name="userForm" ng-submit="submitForm()" action="..." onsubmit="return checkForm(this);">
+	<form name="userForm" ng-submit="submitForm()" action="..." onsubmit="return checkForm(this);" novalidate>
 
 		<!--EMAIL ADDRESS VALIDATION-->
 		<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
@@ -30,11 +30,20 @@
 		<label for="firstName">First Name:</label>
 		<input type="text" ng-model="firstName" name="firstName" placeholder="First Name...">
 
+		<!--LAST NAME VALIDATION -->
+		<div class="form-group" ng-class="{'has-error':userForm.lastName.$invalid && userForm.lastName.$touched}">
 		<label for="lastName">Last Name:</label>
-		<input type="text" ng-model="lastName" name="lastName" placeholder="Last Name...">
+		<input type="text" ng-model="lastName" name="lastName" placeholder="Last Name..." required>
+		<div role="alert">
+            <span class="error" ng-show="userForm.lastName.$invalid && userForm.lastName.$touched" class="help-block">We need to know your last name!</span>
+        </div>
 
+        <div class="form-group" ng-class="{'has-error': userForm.birthday.$invalid && userForm.birthday.$touched}">
 		<label for="birthday">Birthday:</label>
-		<input type="text" ng-model="birthday" name="birthday" placeholder="Birthday...">
+		<input type="date" class="form-control" ng-model="birthday" name="birthday" placeholder="Birthday..." max="2002-11-14" required>
+		<div role="alert">
+            <span class="error" ng-show="userForm.birthday.$invalid && userForm.birthday.$touched" class="help-block">Sorry, you must be at least 13 to sign up!</span>
+        </div>
 
 		<!--PASSWORD VALIDATION-->
 		<div class="form-group">

@@ -28,6 +28,34 @@ function checkPass() {
         message.style.color = redColor;
         message.innerHTML = "Passwords Do Not Match!"
     }
+
+
+//     .controller('formCtrl', ['$scope', function($scope) {
+//   $scope.checkPass = function(input){
+//     var message = document.getElementById('confirmMessage');
+//     var date = input.date;
+//     console.log(date);
+//     var newDate = new Date(date);
+//     console.log(newDate);
+//     var min = Date.parse("November 14, 2015");
+//     date = Date.parse(date);
+//     console.log(date);
+//     console.log(min);
+//     var minutes = 1000 * 60;
+//       var hours = minutes * 60;
+//            var days = hours * 24;
+//       var years = days * 365;
+//        var y = Math.round(min / years);
+//       var ynew = Math.round(date / years);
+//       if(y - ynew < 13){
+//         meesage.innerHTML = "Sorry, you must be at least 13 to sign up!"
+//       }
+
+// }
+  
+
+
+// }]);
 }
 
 angular.module('formSubmission', [])
