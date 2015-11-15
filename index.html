@@ -1,70 +1,66 @@
 <!DOCTYPE HTML>
-
 <html ng-app="formSubmission">
-<head>
-	<title>Our cool website</title>
-</head>
+	<head>
+		<title>Our cool website</title>
 
-<!-- bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
 
-<!-- include libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-    <script src="js/app.js"></script>
+		<!-- include libraries -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	    <script src="js/app.js"></script>
+	</head>
 
-<body ng-controller="formCtrl">
-	<h1>Sign Up</h1>
-	<h2>Our service is fun and awesome, but you must be 13 to join.</h2>
+	<body ng-controller="formCtrl">
+		<h1>Sign Up</h1>
+		<h2>Our service is fun and awesome, but you must be 13 to join.</h2>
 
-	<form name="userForm" ng-submit="submitForm()" action="..." onsubmit="return checkForm(this);" novalidate>
+		<p ng-show="submitted" class="alert alert-success">Thank you for your submission!</p>
 
-		<!--EMAIL ADDRESS VALIDATION-->
-		<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-			<label class="email">Email</label>
-			<input type="email" name="email" class="form-control" ng-model="user.email">
+		<form name="userForm" novalidate>
 
-			<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
-		</div>
+			<!--EMAIL ADDRESS VALIDATION-->
+			<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+				<label class="email">Email</label>
+				<input type="email" name="email" class="form-control" ng-model="user.email">
 
-		<label for="firstName">First Name:</label>
-		<input type="text" ng-model="firstName" name="firstName" placeholder="First Name...">
+				<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+			</div>
 
-		<!--LAST NAME VALIDATION -->
-		<div class="form-group" ng-class="{'has-error':userForm.lastName.$invalid && userForm.lastName.$touched}">
-		<label for="lastName">Last Name:</label>
-		<input type="text" ng-model="lastName" name="lastName" placeholder="Last Name..." required>
-		<div role="alert">
-            <span class="error" ng-show="userForm.lastName.$invalid && userForm.lastName.$touched" class="help-block">We need to know your last name!</span>
-        </div>
+			<label for="firstName">First Name:</label>
+			<input type="text" ng-model="user.firstName" name="firstName" placeholder="First Name...">
 
-        <div class="form-group" ng-class="{'has-error': userForm.birthday.$invalid && userForm.birthday.$touched}">
-		<label for="birthday">Birthday:</label>
-		<input type="date" class="form-control" ng-model="birthday" name="birthday" placeholder="Birthday..." max="2002-11-14" required>
-		<div role="alert">
-            <span class="error" ng-show="userForm.birthday.$invalid && userForm.birthday.$touched" class="help-block">Sorry, you must be at least 13 to sign up!</span>
-        </div>
+			<!--LAST NAME VALIDATION -->
+			<div class="form-group" ng-class="{'has-error':userForm.lastName.$invalid && userForm.lastName.$touched}">
+			<label for="lastName">Last Name:</label>
+			<input type="text" ng-model="user.lastName" name="lastName" placeholder="Last Name..." required>
+			<div role="alert">
+	            <span class="error" ng-show="userForm.lastName.$invalid && userForm.lastName.$touched" class="help-block">We need to know your last name!</span>
+	        </div>
 
-		<!--PASSWORD VALIDATION-->
-		<div class="form-group">
-			<label for="password">Password:</label>
-			<input type="password" name="password" class="form-control" ng-model="user.password" id="password" required>
+	        <div class="form-group" ng-class="{'has-error': userForm.birthday.$invalid && userForm.birthday.$touched}">
+			<label for="birthday">Birthday:</label>
+			<input type="date" class="form-control" ng-model="birthday" name="birthday" placeholder="Birthday..." max="2002-11-14" required>
+			<div role="alert">
+	            <span class="error" ng-show="userForm.birthday.$invalid && userForm.birthday.$touched" class="help-block">Sorry, you must be at least 13 to sign up!</span>
+	        </div>
 
-		</div>
-		<div class="form-group">
-			<label for="confirmPassword">Confirm Password:</label>
-			<input type="password" name="confirmPassword" class="form-control" ng-model="user.confirmPassword" id="confirmPassword" onkeyup="checkPass(); return false;" required>
-			<span id="confirmMessage" class="confirmMessage"></span>
-		</div>
+			<!--PASSWORD VALIDATION-->
+			<div class="form-group">
+				<label for="password">Password:</label>
+				<input type="password" name="password" class="form-control" ng-model="user.password" id="password" required>
 
+			</div>
+			<div class="form-group">
+				<label for="confirmPassword">Confirm Password:</label>
+				<input type="password" name="confirmPassword" class="form-control" ng-model="user.confirmPassword" id="confirmPassword" onkeyup="checkPass(); return false;" required>
+				<span id="confirmMessage" class="confirmMessage"></span>
+			</div>
 
-	<button name="submit" ng-model="submitFormButton" ng-click="submitForm()">Submit</button>
-	<button name="reset" ng-model="resetFormButton" ng-click="resetForm()">Reset</button>
-</form>
+			<button type="submit" name="submit" ng-disabled="userForm.$invalid && userForm.confirmPassword.$invalid" ng-model="submitFormButton" ng-click="submitForm()">Submit</button>
 
-
-</body>
-
-
-
+			<button type="reset" name="reset" ng-model="resetFormButton" ng-click="resetForm()">Reset</button>
+		</form>
+	</body>
 </html>
