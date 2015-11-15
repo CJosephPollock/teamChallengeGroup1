@@ -14,38 +14,56 @@
     <script src="js/app.js"></script>
 
 <body ng-controller="formCtrl">
-	<h1>Sign Up</h1>
-	<h2>Our service is fun and awesome, but you must be 13 to join.</h2>
 
-	<form name="userForm" ng-submit="submitForm()" action="..." onsubmit="return checkForm(this);">
 
+	<form name="userForm" ng-submit="submitForm()" action="..." onsubmit="return checkForm(this);" novalidate>
+		<p class="title">Sign Up</h1>
+		<p class="slogan">Our service is fun and awesome, but you must be 13 to join.</h2>
 		<!--EMAIL ADDRESS VALIDATION-->
-		<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+		<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine || userForm.email.$touched}" >
 			<label class="email">Email</label>
-			<input type="email" name="email" class="form-control" ng-model="user.email">
+			<input type="email" name="email" class="form-control" ng-model="user.email" >
 
-			<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+			<p ng-show="userForm.email.$invalid && !userForm.email.$pristine || userForm.email.$touched"  class="help-block">Enter a valid email.</p>
+
+
 		</div>
 
 		<label for="firstName">First Name:</label>
-		<input type="text" ng-model="firstName" name="firstName" placeholder="First Name...">
+		<input type="text" ng-model="firstName" class="form-control" name="firstName" placeholder="First Name...">
+		<br>
 
+		<!--LAST NAME VALIDATION -->
+		<div class="form-group" ng-class="{'has-error':userForm.lastName.$invalid && userForm.lastName.$touched}">
 		<label for="lastName">Last Name:</label>
-		<input type="text" ng-model="lastName" name="lastName" placeholder="Last Name...">
+		<input type="text" ng-model="lastName" class="form-control" name="lastName" placeholder="Last Name..." required>
+		<div role="alert">
+            <span class="error" ng-show="userForm.lastName.$invalid && userForm.lastName.$touched" class="help-block">We need to know your last name!</span>
+            <br>
+        </div>
 
+        <div class="form-group" ng-class="{'has-error': userForm.birthday.$invalid && userForm.birthday.$touched}">
 		<label for="birthday">Birthday:</label>
-		<input type="text" ng-model="birthday" name="birthday" placeholder="Birthday...">
+		<input type="date" class="form-control" ng-model="birthday" name="birthday" placeholder="Birthday..." max="2002-11-14" required>
+		<div role="alert">
+            <span class="error" ng-show="userForm.birthday.$invalid && userForm.birthday.$touched" class="help-block">Sorry, you must be at least 13 to sign up!</span>
+            <br>
+        </div>
 
 		<!--PASSWORD VALIDATION-->
-		<div class="form-group">
+		<div class="form-group" ng-class="{'has-error' :userForm.password.$invalid && userForm.password.$touched}">
 			<label for="password">Password:</label>
 			<input type="password" name="password" class="form-control" ng-model="user.password" id="password" required>
+			<p ng-show="userForm.password.$invalid && userForm.password.$touched" class="help-block">Password is required.</p>
+
 
 		</div>
-		<div class="form-group">
+		<div class="form-group" ng-class="{'has-error' :userForm.confirmPassword.$invalid && userForm.confirmPassword.$touched}">
 			<label for="confirmPassword">Confirm Password:</label>
 			<input type="password" name="confirmPassword" class="form-control" ng-model="user.confirmPassword" id="confirmPassword" onkeyup="checkPass(); return false;" required>
 			<span id="confirmMessage" class="confirmMessage"></span>
+			<p ng-show="userForm.confirmPassword.$invalid && userForm.confirmPassword.$touched" class="help-block">Password is required.</p>
+
 		</div>
 
 
