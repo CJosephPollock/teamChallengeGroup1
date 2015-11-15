@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-
 <html ng-app="formSubmission">
 <head>
 	<title>Our cool website</title>
@@ -67,13 +66,12 @@
 		</div>
 
 
-	<button name="submit" ng-model="submitFormButton" ng-click="submitForm()">Submit</button>
-	<button name="reset" ng-model="resetFormButton" ng-click="resetForm()">Reset</button>
+			<button type="submit" name="submit" ng-disabled="userForm.$invalid && userForm.confirmPassword.$invalid"
+					ng-model="submitFormButton" ng-click="submitForm()">Submit
+			</button>
+
+			<button type="reset" name="reset" ng-model="resetFormButton" ng-click="resetForm()">Reset</button>
 </form>
-
-
 </body>
 
 
-
-</html>
