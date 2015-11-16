@@ -21,7 +21,7 @@
 		<!--EMAIL ADDRESS VALIDATION-->
 		<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine || userForm.email.$touched}" >
 			<label class="email">Email</label>
-			<input type="email" name="email" class="form-control" ng-model="user.email" >
+			<input type="email" id="emailField" name="email" class="form-control" ng-model="user.email" >
 
 			<p ng-show="userForm.email.$invalid && !userForm.email.$pristine || userForm.email.$touched"  class="help-block">Enter a valid email.</p>
 

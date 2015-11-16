@@ -21,20 +21,22 @@ body {
 	position: relative;
 }
 form {
+	max-width: 800px;
 	width: 80%;
 	text-align: left;
-	margin: auto;
+	margin: 0 auto;
 	background: white;
 	border: 0 none;
-	border-radius: 3px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 	padding: 20px 30px;
 	box-sizing: border-box;
-	margin: 0 10%;
-	
+/*	margin: 0 10%;
+*/	
 	/*stacking fieldsets above each other*/
-	position: absolute;
-}
+/*	position: absolute;
+*/}
 
 .title  {
 	text-align: center;
