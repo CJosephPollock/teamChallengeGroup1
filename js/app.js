@@ -16,6 +16,7 @@ angular.module('formSubmission', [])
     $scope.resetForm = function() {
         $scope.submitted = false;
         $scope.userForm.$setPristine();
+        $scope.showPasswordsDoNotMatch = false;
     }
 
 
@@ -30,30 +31,6 @@ angular.module('formSubmission', [])
         } else {
             $scope.showPasswordsDoNotMatch = true;
         }
-
-        //Store the Confimation Message Object ...
-        // var message = document.getElementById('confirmMessage');
-        // //Set the colors we will be using ...
-        // var noColor = "#ffffff";
-        // var redColor = "#ff6666";
-        // //Compare the values in the password field
-        // //and the confirmation field
-        // if (password.value == confirmPassword.value) {
-        //     //The passwords match.
-        //     //Set the color to noColor and inform
-        //     //the user that they have entered the correct password
-        //     confirmPassword.style.backgroundColor = noColor;
-        //     message.style.color = noColor;
-        //             // message.innerHTML = "Passwords Match!"
-        // } else {
-        //     //The passwords do not match.
-        //     //Set the color to the red color and
-        //     //Set the color to the red color and
-        //     //notify the user.
-        //     confirmPassword.style.backgroundColor = redColor;
-        //     message.style.color = redColor;
-        //     message.innerHTML = "Passwords Do Not Match!"
-        // }
     }
 
 
