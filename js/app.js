@@ -30,13 +30,57 @@
             message.innerHTML = "Passwords Do Not Match!"
         }
     }
+<<<<<<< HEAD
+=======
+
+
+//     .controller('formCtrl', ['$scope', function($scope) {
+//   $scope.checkPass = function(input){
+//     var message = document.getElementById('confirmMessage');
+//     var date = input.date;
+//     console.log(date);
+//     var newDate = new Date(date);
+//     console.log(newDate);
+//     var min = Date.parse("November 14, 2015");
+//     date = Date.parse(date);
+//     console.log(date);
+//     console.log(min);
+//     var minutes = 1000 * 60;
+//       var hours = minutes * 60;
+//            var days = hours * 24;
+//       var years = days * 365;
+//        var y = Math.round(min / years);
+//       var ynew = Math.round(date / years);
+//       if(y - ynew < 13){
+//         meesage.innerHTML = "Sorry, you must be at least 13 to sign up!"
+//       }
+
+// }
+  
+
+
+// }]);
+}
+>>>>>>> 8ff49be8f3743754d1ec9ff648ad3b15f45aaa53
 
 angular.module('formSubmission', [])
 
 .controller('formCtrl', ['$scope', function($scope) {
 
+<<<<<<< HEAD
+=======
+    $scope.submitForm = function() {
+        $scope.submitted = true;
+    }
+>>>>>>> 8ff49be8f3743754d1ec9ff648ad3b15f45aaa53
 
+    $scope.resetForm = function() {
+        $scope.submitted = false;
+        $scope.userForm.$setPristine();
+    }
+    
 
+<<<<<<< HEAD
 
 
 
@@ -56,3 +100,30 @@ angular.module('formSubmission', [])
 
 
 }]);
+=======
+}]);
+ function checkBirth() {
+    var birthday = document.getElementById('birthday');
+
+        
+        var birthdayDate = moment(birthday.value, "MM-DD-YYYY");
+        var currentDate = moment();
+        
+       
+        var difference = currentDate.diff(birthdayDate, 'years');
+        var alert = document.getElementById('validAge');
+
+       
+        if(difference >= 13){
+           
+            alert.style.color= "#ffffff";
+            alert.innerHTML = "valid";
+        }else{
+            
+            alert.style.color="#ff6666";
+            alert.innerHTML = "Sorry, you must be at least 13 to sign up!";
+        }
+ 
+
+    }
+>>>>>>> 8ff49be8f3743754d1ec9ff648ad3b15f45aaa53
