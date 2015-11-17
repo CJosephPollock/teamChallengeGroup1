@@ -8,6 +8,15 @@ describe('Sign Up Page', function(){
         browser.get('http://localhost:8000');
     });
 
+
+    it('should show text when the age is less than 13', function() {
+
+
+        var input = element(by.model('user.email'));
+        input.sendKeys('123');
+        expect(input.getAttribute('value')).toBe('123');
+    });
+
     it('should show the correct tilte', function(){
         
         expect(browser.getTitle()).toEqual('Our cool website');
@@ -29,6 +38,7 @@ describe('Sign Up Page', function(){
         
 
     });
+    
     it('should be able to test whether the user is older than 13 years old', function(){
         birthday.sendKeys('04-07-1995');
         var actual = element(by.css('.validAge')).getText();
