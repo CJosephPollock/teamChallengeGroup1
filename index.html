@@ -66,11 +66,10 @@
 		</div>
 
 
-			<button type="submit" name="submit" ng-disabled="userForm.$invalid && userForm.confirmPassword.$invalid"
-					ng-model="submitFormButton" ng-click="submitForm()">Submit
-			</button>
+			<button class="myButton" type="submit" name="submit" ng-disabled="userForm.$invalid && userForm.confirmPassword.$invalid"
+					ng-model="submitFormButton" ng-click="submitForm()">Sign me up</button>
 
-			<button type="reset" name="reset" ng-model="resetFormButton" ng-click="resetForm()">Reset</button>
+			<button class="myButton" type="reset" name="reset" ng-model="resetFormButton" ng-click="resetForm()">Reset</button>
 </form>
 </body>
 
