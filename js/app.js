@@ -30,8 +30,7 @@
             message.innerHTML = "Passwords Do Not Match!"
         }
     }
-<<<<<<< HEAD
-=======
+
 
 
 //     .controller('formCtrl', ['$scope', function($scope) {
@@ -61,18 +60,14 @@
 
 // }]);
 }
->>>>>>> 8ff49be8f3743754d1ec9ff648ad3b15f45aaa53
 
 angular.module('formSubmission', [])
 
 .controller('formCtrl', ['$scope', function($scope) {
 
-<<<<<<< HEAD
-=======
     $scope.submitForm = function() {
         $scope.submitted = true;
     }
->>>>>>> 8ff49be8f3743754d1ec9ff648ad3b15f45aaa53
 
     $scope.resetForm = function() {
         $scope.submitted = false;
@@ -80,7 +75,6 @@ angular.module('formSubmission', [])
     }
     
 
-<<<<<<< HEAD
 
 
 
@@ -99,8 +93,6 @@ angular.module('formSubmission', [])
     }
 
 
-}]);
-=======
 }]);
  function checkBirth() {
     var birthday = document.getElementById('birthday');
@@ -126,4 +118,3 @@ angular.module('formSubmission', [])
  
 
     }
->>>>>>> 8ff49be8f3743754d1ec9ff648ad3b15f45aaa53
