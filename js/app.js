@@ -73,3 +73,27 @@ angular.module('formSubmission', [])
     
 
 }]);
+ function checkBirth() {
+    var birthday = document.getElementById('birthday');
+
+        
+        var birthdayDate = moment(birthday.value, "MM-DD-YYYY");
+        var currentDate = moment();
+        
+       
+        var difference = currentDate.diff(birthdayDate, 'years');
+        var alert = document.getElementById('validAge');
+
+       
+        if(difference >= 13){
+           
+            alert.style.color= "#ffffff";
+            alert.innerHTML = "valid";
+        }else{
+            
+            alert.style.color="#ff6666";
+            alert.innerHTML = "Sorry, you must be at least 13 to sign up!";
+        }
+ 
+
+    }
