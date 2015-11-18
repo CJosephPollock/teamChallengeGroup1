@@ -27,7 +27,6 @@ describe('Sign Up Page', function(){
         email.clear();
         email.sendKeys("ztianai");
         actual = element(by.css('.errorEmail')).getText();
-        expected = "Enter a valid email.";
         expect(actual).toEqual(expected);  
     });
 
@@ -47,7 +46,6 @@ describe('Sign Up Page', function(){
         lastName.clear();
         lastName.sendKeys('\t');
         actual = element(by.css('.errorLN')).getText();
-        expected = "We need to know your last name!";
         expect(actual).toEqual(expected);
     });
 
@@ -103,7 +101,6 @@ describe('Sign Up Page', function(){
         confirmPassword.clear();
         confirmPassword.sendKeys('123123');
         actual = element(by.css('.passwordMatch')).getText();
-        expected = "Passwords do not match.";
         expect(actual).toEqual(expected);
     });
 });
