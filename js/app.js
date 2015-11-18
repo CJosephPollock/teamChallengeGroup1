@@ -19,6 +19,7 @@ angular.module('formSubmission', [])
         $scope.userForm.$setPristine();
         $scope.userForm.$setUntouched();
         $scope.showPasswordsDoNotMatch = false;
+        $scope.userForm.birthday.$setValidity('tooyoung', true);
     }
 
 
