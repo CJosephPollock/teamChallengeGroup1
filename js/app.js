@@ -11,11 +11,13 @@ angular.module('formSubmission', [])
 
     $scope.submitForm = function() {
         $scope.submitted = true;
+
     }
 
     $scope.resetForm = function() {
         $scope.submitted = false;
         $scope.userForm.$setPristine();
+        $scope.userForm.$setUntouched();
         $scope.showPasswordsDoNotMatch = false;
     }
 
