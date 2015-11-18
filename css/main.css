@@ -32,12 +32,8 @@ form {
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 	padding: 20px 30px;
 	box-sizing: border-box;
-/*	margin: 0 10%;
-*/	
-	/*stacking fieldsets above each other*/
-/*	position: absolute;
-*/}
-
+}
+/*title field*/
 .title  {
 	text-align: center;
 	font-size: 15px;
@@ -45,7 +41,7 @@ form {
 	color: #2C3E50;
 	margin-bottom: 10px;
 }
-
+/*slogan field*/
 .slogan {
 	text-align: center;
 	font-size: 15px;
@@ -56,7 +52,7 @@ form {
 body {
 	font-family: montserrat, arial, verdana;
 }
-
+/*styling both sign up and reset buttons*/
 .myButton {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e));
 	background:-moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
@@ -78,6 +74,7 @@ body {
 	text-decoration:none;
 	text-shadow:-1px 1px 24px #283966;
 }
+
 .myButton:active {
 	position:relative;
 	top:1px;
