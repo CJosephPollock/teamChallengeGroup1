@@ -16,9 +16,12 @@
 <body ng-controller="formCtrl">
 
 
-	<form name="userForm" ng-submit="submitForm()" action="..." onsubmit="return checkForm(this);" novalidate>
+	<p ng-show="submitted" class="alert alert-success">Thank you for your submission!</p>
+
+	<form name="userForm" ng-submit="submitForm()" onsubmit="return checkForm(this);" novalidate>
 		<p class="title">Sign Up</h1>
 		<p class="slogan">Our service is fun and awesome, but you must be 13 to join.</h2>
+
 		<!--EMAIL ADDRESS VALIDATION-->
 		<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine || userForm.email.$touched}" >
 			<label class="email">Email</label>
@@ -65,12 +68,12 @@
 
 
 			<p class="help-block" ng-if="showPasswordsDoNotMatch">Passwords do not match.</p>
-			<p ng-show="userForm.confirmPassword.$invalid && userForm.confirmPassword.$touched" class="help-block">Password is required.</p>
+			<p class="help-block" ng-show="userForm.confirmPassword.$invalid && userForm.confirmPassword.$touched">Password is required.</p>
 
 		</div>
 
 
-			<button class="myButton" type="submit" name="submit" ng-disabled="userForm.$invalid && userForm.confirmPassword.$invalid"
+			<button class="myButton" type="submit" name="submit" ng-disabled="userForm.$invalid"
 					ng-model="submitFormButton" ng-click="submitForm()">Sign me up</button>
 
 			<button class="myButton" type="reset" name="reset" ng-model="resetFormButton" ng-click="resetForm()">Reset</button>
