@@ -32,7 +32,7 @@ describe('Sign Up Page', function(){
 
     //Test we have the right title
     it('should show the correct tilte', function(){
-        expect(browser.getTitle()).toEqual('Our cool website');
+        expect(browser.getTitle()).toEqual('Sign up for our Service');
     });
     
     //Test validation for last name input
