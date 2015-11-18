@@ -1,8 +1,4 @@
 'use strict'
-
-
-
-
 angular.module('formSubmission', [])
 
 .controller('formCtrl', ['$scope', function($scope) {
@@ -13,7 +9,6 @@ angular.module('formSubmission', [])
         $scope.submitted = true;
 
     }
-
     $scope.resetForm = function() {
         $scope.submitted = false;
         $scope.userForm.$setPristine();
@@ -21,7 +16,6 @@ angular.module('formSubmission', [])
         $scope.showPasswordsDoNotMatch = false;
         $scope.userForm.birthday.$setValidity('tooyoung', true);
     }
-
 
     //function that checks if passwords match
     $scope.checkPass = function() {
@@ -35,10 +29,6 @@ angular.module('formSubmission', [])
             $scope.showPasswordsDoNotMatch = true;
         }
     }
-
-
-
-
     //Check if the input birthday meet the requirements
     $scope.checkBirth = function() {
         var birthday = $scope.birthday;
@@ -51,7 +41,5 @@ angular.module('formSubmission', [])
             $scope.userForm.birthday.$setValidity('tooyoung', false);
         }
     }
-
-
 }]);
 
