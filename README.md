@@ -1,5 +1,8 @@
-I like chocolate, YO
+#User Sign Up Form
 
-My favorite candy is я люблю тебя and nothing else!
+By TianAi Zhao, Dominik Żmuda, Maria Chebanova, Cameron (Joe) Pollock
 
-My favorite dessert is ice cream!!!! <3
+This form allows a user to sign up for our website, but only if they are over 13.  We ensure their email is valid, they are at least 13 years old, and their passwords match.  
+
+In addition, we have written tests in Protractor that ensure that these requirements are met.  
+
